@@ -50,7 +50,7 @@ app.post('/linetext2json/v1', (req, res) => {
           date: tempDate,
           time: x.split('\t')[0],
           user: x.split('\t')[1],
-          text: x.split('\t')[2]
+          text: x.split('\t')[2],
         }
       );
     } else if (x !== '' && !x.match(boundary)) {
@@ -58,8 +58,8 @@ app.post('/linetext2json/v1', (req, res) => {
     }
   });
 
-  res.send([lineArray]);
-  // res.send('ok');
+  res.send(lineArray);
+
 })
 
 // 出力
